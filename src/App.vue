@@ -6,13 +6,10 @@
     </div>
 
     <!-- Title and Message -->
-    <transition name="fade" mode="out-in">
-      <h2>🎂 Happy Birthday 🎈<br />Stella</h2>
-    </transition>
 
-    <transition name="fade" mode="out-in">
-      <p class="birthday-message">Wishing you a beautiful day filled with love and laughter! 🥳</p>
-    </transition>
+    <h2>🎂 Happy Birthday 🎈<br />Stella</h2>
+
+    <p class="birthday-message">Wishing you a beautiful day filled with love and laughter! 🥳</p>
 
     <p class="love-message" ref="loveMessage"></p>
 
@@ -45,7 +42,14 @@
     <transition name="fade">
       <div v-if="showGift" class="gift-card">
         <p>🎉 Here's your gift! 🎁</p>
-        <img src="https://media.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif" alt="Gift" />
+        <p><strong>🎁 Gift Code:</strong> <code>PL6-GJM-tAA</code> ✨</p>
+
+        <a
+          href="https://app.wunschgutschein.de/?_gl=1%2ak3vok0%2a_gcl_aw%2aR0NMLjE3NTAxODY2MzMuQ2p3S0NBandwTVRDQmhBLUVpd0FfLU1zbWFTYVFma2dYMEM5MjNBQlQtd1U4NFhDZy14VnNQZGtOc0lnU0liWWtkbVJDTTFTVldPcWd4b0NxNUlRQXZEX0J3RQ..%2a_gcl_au%2aMTcyNzU5MjkwNy4xNzUwMTQ2ODY5%2a_ga%2aMjMyMjA2NDQ0LjE3NTAxNDY4Njc.%2a_ga_NCE5M9XEQX%2aczE3NTAxODY2MzIkbzUkZzAkdDE3NTAxODY2MzIkajYwJGwwJGgw"
+          target="_blank"
+          >wunschgutschein.de</a
+        >
+        <img src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" alt="Gift" />
       </div>
     </transition>
 
@@ -59,10 +63,7 @@
 
     <!-- Background Music -->
     <audio ref="bgMusic" autoplay loop preload="auto" style="display: none">
-      <source
-        src="https://cdn.pixabay.com/download/audio/2023/10/06/audio_birthday_instrumental.mp3"
-        type="audio/mpeg"
-      />
+      <source src="../sound-effect-happy-birthday-music-box-333245.mp3" type="audio/mpeg" />
     </audio>
   </div>
 </template>
@@ -80,8 +81,6 @@ export default defineComponent({
     const countdownStarted = ref(false)
     const loveMessage = ref(null)
 
-    let gotchaTimeout = null
-
     const acceptCookies = () => {
       cookieAccepted.value = true
       localStorage.setItem('cookieAccepted', 'true')
@@ -98,7 +97,7 @@ export default defineComponent({
 
       setTimeout(() => {
         gotchaTriggered.value = true
-      }, 60 * 1000) // 1 minute
+      }, 10 * 1000) // 1 minute
     }
 
     const randomConfettiStyle = () => {
@@ -143,7 +142,7 @@ export default defineComponent({
 
       const bg = document.querySelector('audio')
       if (bg) {
-        bg.volume = 0.04
+        bg.volume = 0.02
         bg.play().catch(() => {
           console.warn('Autoplay blocked. Will play on click.')
         })
