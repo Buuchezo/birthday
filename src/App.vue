@@ -53,8 +53,6 @@
       </div>
     </transition>
 
-
-
     <!-- Background Music -->
     <audio ref="bgMusic" autoplay loop preload="auto" style="display: none">
       <source src="../public/sound-effect-happy-birthday-music-box-333245.mp3" type="audio/mpeg" />
@@ -196,7 +194,7 @@ body {
 
 .container {
   max-width: 420px;
-  margin: auto;
+  margin: 40px auto;
   background: white;
   border-radius: 2rem;
   padding: 2rem;
