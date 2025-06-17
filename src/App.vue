@@ -63,7 +63,7 @@
 
     <!-- Background Music -->
     <audio ref="bgMusic" autoplay loop preload="auto" style="display: none">
-      <source src="../sound-effect-happy-birthday-music-box-333245.mp3" type="audio/mpeg" />
+      <source src="../public/sound-effect-happy-birthday-music-box-333245.mp3" type="audio/mpeg" />
     </audio>
   </div>
 </template>
