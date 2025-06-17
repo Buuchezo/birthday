@@ -56,7 +56,7 @@
 
 
     <!-- Background Music -->
-    <audio ref="bgMusic" autoplay preload="auto" style="display: none">
+    <audio ref="bgMusic" autoplay loop preload="auto" style="display: none">
       <source src="../public/sound-effect-happy-birthday-music-box-333245.mp3" type="audio/mpeg" />
     </audio>
   </div>
@@ -136,7 +136,7 @@ export default defineComponent({
 
       const bg = document.querySelector('audio')
       if (bg) {
-        bg.volume = 0.02
+        bg.volume = 0.01
         bg.play().catch(() => {
           console.warn('Autoplay blocked. Will play on click.')
         })
